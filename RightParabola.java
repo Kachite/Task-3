@@ -10,6 +10,6 @@ public class RightParabola {
     }
 
     public boolean isRightOfParabola(double x, double y) {
-        return x >= a * Math.pow(y - y0, 2) + x0 ;
+        return x > a * Math.pow(y - y0, 2) + x0 ;
     }
 }

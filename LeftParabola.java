@@ -10,6 +10,6 @@ public class LeftParabola {
     }
 
     public boolean isLeftOfParabola(double x, double y) {
-        return x <= a * Math.pow(y - y0, 2) + x0 ;
+        return x < a * Math.pow(y - y0, 2) + x0 ;
     }
 }
