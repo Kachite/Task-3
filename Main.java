@@ -3,16 +3,16 @@ import java.util.Scanner;
 public class Main {
     public static final Line L1 = new Line(0, 3, 0.5);
     public static final LeftParabola P1 = new LeftParabola(-1, -1, -0.5);
-    public static final RightParabola P2 = new RightParabola(-5, 2, 0.5);
+    public static final RightParabola P2 = new RightParabola(-5, 2, 0.125);
     public static final Rectangle R1 = new Rectangle(-2,0,2,-6);
     public static void main(String[] args) {
-//        Scanner sc = new Scanner(System.in);
-//        System.out.print("Enter x coordinate: ");
-//        double x = sc.nextDouble();
-//        System.out.print("Enter y coordinate: ");
-//        double y = sc.nextDouble();
-//        printColorForPoint(x, y);
-        System.out.println(P2.isRightOfParabola(-1.5,-1));
+       try (Scanner sc = new Scanner(System.in)) {
+        System.out.print("Enter x coordinate: ");
+           double x = sc.nextDouble();
+           System.out.print("Enter y coordinate: ");
+           double y = sc.nextDouble();
+           printColorForPoint(x, y);
+    }
     }
 
     public static void printColorForPoint(double x, double y) {
@@ -34,12 +34,11 @@ public class Main {
         if ((L1.isPointAboveLine(x,y) && P1.isLeftOfParabola(x,y) && !P2.isRightOfParabola(x,y))
                 || (P1.isLeftOfParabola(x,y) && R1.isWithinRectangle(x,y))
                 || (P2.isRightOfParabola(x,y) && !P1.isLeftOfParabola(x,y) && !R1.isWithinRectangle(x,y) && x<0 && y<0)
-                || (P2.isRightOfParabola(x,y) && !P1.isLeftOfParabola(x,y) && !R1.isWithinRectangle(x,y))
-                || (!L1.isPointAboveLine(x,y) && !(x<-2))) {
+                || (P2.isRightOfParabola(x,y) && !P1.isLeftOfParabola(x,y) && !R1.isWithinRectangle(x,y)) && (!L1.isPointAboveLine(x,y) && !(x<-2))) {
                 return SimpleColor.BLUE;
 
         }
-        return SimpleColor.YELLOW;
+        return SimpleColor.WHITE;
    }
 }
 
