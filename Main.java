@@ -24,19 +24,18 @@ public class Main {
         || (R1.isWithinRectangle(x, y) && !P1.isLeftOfParabola(x, y) && P2.isRightOfParabola(x, y))){
             return SimpleColor.ORANGE;
         }
-        if (P1.isLeftOfParabola(x,y) && !P2.isRightOfParabola(x,y) && !L1.isPointAboveLine(x,y)){
+        if (P1.isLeftOfParabola(x, y) && !P2.isRightOfParabola(x, y) && !L1.isPointAboveLine(x, y)){
             return SimpleColor.GRAY;
         }
-        if ((L1.isPointAboveLine(x,y) && !P1.isLeftOfParabola(x,y) && !P2.isRightOfParabola(x,y))
-                || (L1.isPointAboveLine(x,y) && P1.isLeftOfParabola(x,y) && P2.isRightOfParabola(x,y))) {
+        if ((L1.isPointAboveLine(x, y) && !P1.isLeftOfParabola(x, y) && !P2.isRightOfParabola(x, y))
+                || (L1.isPointAboveLine(x, y) && P1.isLeftOfParabola(x, y) && P2.isRightOfParabola(x, y))) {
             return SimpleColor.GREEN;
         }
-        if ((L1.isPointAboveLine(x,y) && P1.isLeftOfParabola(x,y) && !P2.isRightOfParabola(x,y))
-                || (P1.isLeftOfParabola(x,y) && R1.isWithinRectangle(x,y))
-                || (P2.isRightOfParabola(x,y) && !P1.isLeftOfParabola(x,y) && !R1.isWithinRectangle(x,y) && x<0 && y<0)
-                || (P2.isRightOfParabola(x,y) && !P1.isLeftOfParabola(x,y) && !R1.isWithinRectangle(x,y)) && (!L1.isPointAboveLine(x,y) && !(x<-2))) {
+        if ((L1.isPointAboveLine(x, y) && P1.isLeftOfParabola(x, y) && !P2.isRightOfParabola(x, y))
+                || (P1.isLeftOfParabola(x, y) && R1.isWithinRectangle(x, y))
+                || (P2.isRightOfParabola(x, y) && !P1.isLeftOfParabola(x, y) && !R1.isWithinRectangle(x, y) && x < 0 && y < 0)
+                || (P2.isRightOfParabola(x, y) && !P1.isLeftOfParabola(x, y) && !R1.isWithinRectangle(x, y)) && (!L1.isPointAboveLine(x, y) && !(x < -2))) {
                 return SimpleColor.BLUE;
-
         }
         return SimpleColor.WHITE;
    }
